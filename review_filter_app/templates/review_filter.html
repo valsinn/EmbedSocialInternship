@@ -1,0 +1,22 @@
+<form method="GET">
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+</form>
+
+<h2>Reviews</h2>
+
+{% if reviews %}
+<ul>
+    {% for review in reviews %}
+    <li>
+        <p>{{ review.text }}</p>
+        <ul>
+            <li>Rating: {{ review.rating }}</li>
+            <li>Date: {{ review.date }}</li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No reviews found.</p>
+{% endif %}
